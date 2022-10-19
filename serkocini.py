@@ -1,0 +1,5 @@
+laukums = int(input("Kads ir figuras laukums(cm2)?"))
+x = int(input("Vienas malas garums(cm)"))
+y = int(input("Otras malas garums(cm)"))
+kastites = laukums/(x*y)
+print(kastites)
