@@ -15,14 +15,17 @@ def iqh_alt(altitude):
 if initial == "altitude":
         altitude = int(input("Enter current altitude in feet(only numbers)   "))
         if altitude>10000:
-            print("Altitude too high(Max 10000feet)")
+            print("Altitude(", altitude, ") is too high(Max 10000feet)!")
         else:
             iqh_alt(altitude)
 elif initial == "temperature":
         temperature = int(input("enter current temperature(In Celsius, only numbers)  " ))
-        iqh_temp(temperature)
-        altitude = iqh_temp(temperature)
-        iqh_alt(altitude)
+        if temperature<-5 or temperature>35:
+            print("The temperature entered(" , temperature, ") is not valid. Please enter a value between -5 and 35!")
+        else:
+            iqh_temp(temperature)
+            altitude = iqh_temp(temperature)
+            iqh_alt(altitude)
 else:
     print(initial, "is an invalid value, try again.")
     
