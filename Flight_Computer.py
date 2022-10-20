@@ -7,8 +7,9 @@ def iqh_temp(temperature):
     return altitude
 
 def iqh_alt(altitude):
+    temperature = 15 - (altitude/1000 * 2)
     indicated_pressure = 1013-altitude//30
-    print("The pressure is ", indicated_pressure,    "hPa at an altitude of ", altitude , "feet AMSL.(ISA)" )
+    print("The pressure is ", indicated_pressure,    "hPa at an altitude of ", altitude , "feet AMSL with a temperature of ", temperature, "Celsius.(ISA conditions)" )
     return indicated_pressure
 
 if initial == "altitude":
