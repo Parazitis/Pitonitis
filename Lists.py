@@ -1,7 +1,88 @@
-initial= str(input("Enter Altitude or Temperature. To determine pressure under isa conditions(Max 10000 ft)   "))
-qnh = int(input("enter current qnh at airport(hPa)   "))
+#a = [2,4,5, -4]
+#print(a)
+#print(len(a))
 
-press_dev = qnh - 1013
+#b = ["a1", "b1", "c1"]
+#print(b[0])
+#print(b[-1])
+
+#b = ["a1", "b1", "c1"]
+#print(b[0:2])
+
+#b = ["a1", "b1", "c1", "d"]
+#b[0:3] = ["test", "test1", "test2"]
+#print(b)
+
+#b = ["a1", "b1", "c1", "d"]
+#print("a1" in b)
+
+#b = ["a1", "b1", "c1", "d"]
+#for  kaka in b:
+ #   print(kaka)
+""""
+b = ["a1", "b1", "c1", "d"]
+b.insert(1,"test")
+b.remove("a1")
+print(b)
+languages1 = b.copy()
+print(b)
+
+mixed_list = ["hello", -34, "Java", True]
+print("1.", mixed_list[-1])
+mixed_list[1] = "Hi"
+print("2.", mixed_list )
+
+mixed_tuple = (1,3,4,5)
+mixed_tuple[1] = 100
+print("3.", mixed_tuple)
+"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""
+initial= str(input("Enter Altitude or Temperature. To determine pressure under isa conditions(Max 10000 ft)  "))
 
     
 def iqh_temp(temperature):
@@ -12,7 +93,7 @@ def iqh_temp(temperature):
 def iqh_alt(altitude):
     temperature = 15 - (altitude/1000 * 2)
     indicated_pressure = 1013-altitude//30
-    print("The pressure is ", indicated_pressure - press_dev,    "hPa at an altitude of ", altitude , "feet AMSL with a temperature of ", temperature, "Celsius.(With a QNH of", qnh,"hPa)")
+    print("The pressure is ", indicated_pressure,    "hPa at an altitude of ", altitude , "feet AMSL with a temperature of ", temperature, "Celsius.(ISA conditions)" )
     return indicated_pressure
 
 if initial == "altitude":
@@ -31,7 +112,7 @@ elif initial == "temperature":
             iqh_alt(altitude)
 else:
     print(initial, "is an invalid value, try again.")
-    
+    """
 
 
 
