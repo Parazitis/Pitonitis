@@ -36,9 +36,6 @@ mixed_tuple = (1,3,4,5)
 mixed_tuple[1] = 100
 print("3.", mixed_tuple)
 """
-
-
-
 """
 initial= str(input("Enter Altitude or Temperature. To determine pressure under isa conditions(Max 10000 ft)  "))
 
@@ -71,8 +68,3 @@ elif initial == "temperature":
 else:
     print(initial, "is an invalid value, try again.")
     """
-
-
-
-
-

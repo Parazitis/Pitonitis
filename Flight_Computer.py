@@ -56,6 +56,28 @@ elif  str(start) == "ALTITUDE":                                                 
             alt_iqh_qnh(iqh, qnh)                                                                                                                                                                                     #starts "altitude based on iqh and qnh" function
             altitude = alt_iqh_qnh(iqh, qnh)        
             print("The altitude is ", altitude, " feet AMSL.")                                                                                                                                                        #prints resulting altitude
+
+initial= str(input("Enter Altitude or Temperature. To determine pressure under isa conditions(Max 10000 ft)   "))
+qnh = int(input("enter current qnh at airport(hPa)   "))
+
+press_dev = qnh - 1013
+
+    
+def iqh_temp(temperature):
+    isa_dev = temperature - 15
+    altitude = isa_dev*-500
+    return altitude
+
+def iqh_alt(altitude):
+    temperature = 15 - (altitude/1000 * 2)
+    indicated_pressure = 1013-altitude//30
+    print("The pressure is ", indicated_pressure - press_dev,    "hPa at an altitude of ", altitude , "feet AMSL with a temperature of ", temperature, "Celsius.(With a QNH of", qnh,"hPa)")
+    return indicated_pressure
+
+if initial == "altitude":
+        altitude = int(input("Enter current altitude in feet(only numbers)   "))
+        if altitude>10000:
+            print("Altitude(", altitude, ") is too high(Max 10000feet)!")
         else:
             print(initial, " is an invalid entry, try again. ")                                                                                                                                                          #prints error message if entered value is invalid
 
